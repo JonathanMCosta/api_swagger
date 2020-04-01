@@ -1,4 +1,5 @@
 # directories
 **/bin/
 **/obj/
-/src/.vs/
+**/src/.vscode/
+**/src/.vs/
