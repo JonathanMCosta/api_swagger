@@ -23,7 +23,7 @@ pipeline {
         stage('Publicando imagem na AWS') {
             steps {
                 script {
-                    docker.withRegistry('https://559965085445.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:AKIAYEYEFD4CQTHRAFZC') {
+                    docker.withRegistry('https://559965085445.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:AWS_KEY') {
                         docker.image('repo-api-swagger').push('v8')
                     }
                 }
