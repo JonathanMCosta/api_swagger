@@ -23,8 +23,9 @@ pipeline {
         stage('Publicando imagem na AWS') {
             steps {
                 script {
-                    sh 'aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 559965085445.dkr.ecr.us-west-2.amazonaws.com/repo-api-swagger'
-                    sh "docker push 559965085445.dkr.ecr.us-west-2.amazonaws.com/repo-api-swagger:v8"
+                    docker.withRegistry('https://559965085445.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:AWS_KEY') {
+                        docker.image('repo-api-swagger').push('v8')
+                    }
                 }
             }
         }        
