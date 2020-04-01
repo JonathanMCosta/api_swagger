@@ -23,12 +23,8 @@ pipeline {
         stage('Publicando imagem na AWS') {
             steps {
                 script {
-                    withAWS(credentials: 'aws-credentials', region: 'us-west-2') {
-
                     sh 'aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 559965085445.dkr.ecr.us-west-2.amazonaws.com/repo-api-swagger'
-                        sh "docker push 559965085445.dkr.ecr.us-west-2.amazonaws.com/repo-api-swagger:v8"
-                    }
-
+                    sh "docker push 559965085445.dkr.ecr.us-west-2.amazonaws.com/repo-api-swagger:v8"
                 }
             }
         }        
