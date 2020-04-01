@@ -14,7 +14,7 @@ pipeline {
         stage('Construindo a imagem') {
             steps {
                 script {
-                    sh "docker build -t api:v${BUILD_NUMBER}"
+                    sh "docker build -t api:v${BUILD_NUMBER} ."
                 }
             }
         }
