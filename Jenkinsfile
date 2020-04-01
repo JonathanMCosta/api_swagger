@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://559965085445.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:jenkins') {
-                        sh "docker push 559965085445.dkr.ecr.us-west-2.amazonaws.com/repo-api-swagger:v8"
+                        sh "docker push 559965085445.dkr.ecr.us-west-2.amazonaws.com/repo-api:v8"
                     }
                 }
             }
